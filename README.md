@@ -11,17 +11,17 @@ LOLstat is a program made in python to access data off of https://u.gg. There ar
   * Win Rate (.winrate):
     - Returns how many times the champion's team wins as a percentage
     - Will tell how many matches make up the percentage
-    ![winrate example](https://imgur.com/a/CSPTyiz)
+    ![winrate example](https://i.imgur.com/WESE2Kp.png)
     
  * Pick Rate (.pickrate):
     - Returns how many times the champion is picked as a percentage
     - Will tell how many matches make up the percentage
-    ![pickrate_example](https://imgur.com/a/0PhdUfA)
+    ![pickrate_example](https://i.imgur.com/ukUwTxA.png)
     
  * Ban Rate (.banrate):
     - Returns how many times the champion is banned as a percentage
     - Will tell how many matches make up the percentage
-    ![banrate_example](https://imgur.com/a/9tXg2GS)
+    ![banrate_example](https://i.imgur.com/mzD5Cf4.png)
     
  * Server Ping (.ping):
     - Returns the server ping in ms of the Discord server it is used in
