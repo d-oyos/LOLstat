@@ -9,7 +9,8 @@ client.remove_command('help')
 
 @client.event
 async def on_ready():
-    print('Bot is ready.')
+    await client.change_presence(activity=discord.Game('Tanklyn'))    
+    print('Online!')
 
 @client.command()
 async def help(ctx):
@@ -17,6 +18,8 @@ async def help(ctx):
         colour = discord.Colour.red()
     )
     embed.set_author(name = 'Commands')
+    embed.add_field(name = '.list', value = 'use with \'all\' to print all champions, or give a single letter' +
+                                            ' to print champions whose name starts with that letter', inline = False)
     embed.add_field(name = '.winrate', value = 'Returns champion win rate on current patch', inline = False)
     embed.add_field(name = '.banrate', value = 'Returns champion ban rate on current patch', inline = False)
     embed.add_field(name = '.pickrate', value = 'Returns champion pick rate on current patch', inline = False)
@@ -26,6 +29,10 @@ async def help(ctx):
 @client.command()
 async def ping(ctx):
     await ctx.send(f'Server ping: {round(client.latency * 1000)}ms')
+
+@client.command()
+async def list(ctx,tag):
+    await ctx.send(listChamps(openExcel(),tag))
 
 @client.command()
 async def winrate(ctx, *, champion):

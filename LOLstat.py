@@ -43,6 +43,19 @@ def getData(link):
     #   4- matches
     return data
 
+def listChamps(frame, tag):
+    champs = []
+    letterChamps = []
+    for row in frame.itertuples():
+        champs.append(row.champ)
+    if (tag == 'all'):
+        return (', '.join(champs))
+    else:
+        for n in champs:
+            if (n[0][0] == tag.capitalize()):
+                letterChamps.append(n)
+        return (', '.join(letterChamps))
+
 def winRate(champion):
     desired_link = getLink(champion.capitalize(),openExcel())
     desired_index = getIndex(champion.capitalize(),openExcel())
